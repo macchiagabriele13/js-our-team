@@ -69,7 +69,7 @@ for (let i = 0; i < arrayMembers.length; i++) {
     console.log(singleMember); 
 
     const cardMarkup = `
-    <div class="card col">
+    <div class="col-4 text-center">
         <img src="./assets/img/${singleMember.Image}" alt="">
         <h3>${singleMember.Name}</h3>
         <h4>${singleMember.Role}</h4>

@@ -3,3 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title>p{
+    line-height: 1.75rem;
+    max-width: 600px;
+    text-align: center;
+}
+
+img{
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
