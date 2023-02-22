@@ -64,22 +64,47 @@ let arrayMembers = [
 
 /* MILESTONE 1: Stampare su console le informazioni di nome, ruolo e la stringa della foto */
 
+let elementRow = document.querySelector('.row');
+
 for (let i = 0; i < arrayMembers.length; i++) {
     const singleMember = arrayMembers[i];
     console.log(singleMember); 
+    generateMarkup(elementRow, singleMember)
 
-    const cardMarkup = `
+    /* const cardMarkup = `
     <div class="col-4 text-center">
         <img src="./assets/img/${singleMember.Image}" alt="">
         <h3>${singleMember.Name}</h3>
         <h4>${singleMember.Role}</h4>
      </div>
     `
-    document.querySelector('.row').insertAdjacentHTML('beforeend', cardMarkup)
+    document.querySelector('.row').insertAdjacentHTML('beforeend', cardMarkup) */
 }
 
 
 /* MILESTONE 2: Stampare le stesse informazioni su DOM sottoforma di stringhe
  */
+
+function generateMarkup (element, singleTeam) {
+    const colElement = document.createElement('div');
+    colElement.classList.add('col');
+    const cardMember = document.createElement('div');
+    cardMember.classList.add('card_member');
+    colElement.append(cardMember);
+    element.insertAdjacentElement('beforeend', colElement)
+    generateCardMember(cardMember, singleTeam)
+    
+}
+
+
+function generateCardMember(card, singleTeam){
+    card.innerHTML = `
+    <img src="./assets/img/${singleTeam.Image}" alt="">
+    <h3 class="pt-3 text-uppercase">Nome</h3>
+    <h4>${singleTeam.Name}</h4>
+    <h3 class="pt-3 text-uppercase">Ruolo</h3>
+    <h5 class="pb-4">${singleTeam.Role}</h5>
+    `
+}
 
 
